@@ -1,0 +1,139 @@
+/* FULL PAGE DASHBOARD BACKGROUND */
+.welcome-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* FLOATING BLOBS */
+.blob {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.7;
+  animation: floatBlob 8s infinite ease-in-out;
+  z-index: 0;
+}
+
+.blob1 { background: #00eaff; top: 20%; left: 10%; }
+.blob2 { background: #00ffa3; bottom: 10%; right: 15%; animation-delay: 2s; }
+.blob3 { background: #7f5cff; top: 60%; left: 50%; animation-delay: 4s; }
+
+@keyframes floatBlob {
+  0%,100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(30px); }
+}
+
+/* GLASS CARD */
+.welcome-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  padding: 50px 40px;
+  width: 85%;
+  max-width: 450px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: popIn 1.2s ease;
+}
+
+/* MAIN TITLE */
+.welcome-card h1 {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  animation: slideIn 1s ease forwards;
+}
+
+.welcome-card h1 span {
+  color: #00eaff;
+}
+
+/* SUBTITLE */
+.subtitle {
+  font-size: 16px;
+  margin: 18px 0 30px;
+  line-height: 1.4;
+  opacity: 0.9;
+  color: rgba(255,255,255,0.85);
+}
+
+/* BUTTONS */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* DASHBOARD STYLE BUTTON */
+.btn {
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  background: linear-gradient(45deg, #00eaff, #00ffa3);
+  color: #fff;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,234,255,0.5);
+}
+
+.signup-btn {
+  background: linear-gradient(45deg, #7f5cff, #b26eff);
+  color: #fff;
+}
+
+.signup-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(127,92,255,0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .welcome-card {
+    padding: 35px 25px;
+  }
+
+  .welcome-card h1 {
+    font-size: 30px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+  }
+}

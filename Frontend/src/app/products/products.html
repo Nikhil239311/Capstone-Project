@@ -1,0 +1,133 @@
+
+
+<!-- <div class="product-page">
+
+  <div class="left-section">
+
+    <div class="categories">
+      <button 
+        *ngFor="let cat of categories" 
+        (click)="selectCategory(cat)" 
+        [class.active]="selectedCategory === cat">
+        {{ cat }}
+      </button>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <img [src]="product.image" alt="{{ product.name }}" />
+
+        <div class="product-info">
+          <h3>{{ product.name }}</h3>
+          <p class="price">${{ product.price }}</p>
+
+          <button (click)="addToCart(product)" class="add-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-panel">
+
+    <h2>Your Cart</h2>
+
+    <div *ngIf="cart.length === 0" class="empty">
+      Cart is empty.
+    </div>
+
+    <div *ngFor="let item of cart; let i = index" class="cart-item">
+
+      <img [src]="item.image" />
+
+      <div class="cart-info">
+        <h4>{{ item.name }}</h4>
+        <p>${{ item.price }}</p>
+
+        <div class="qty">
+          <button (click)="decreaseQty(i)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="increaseQty(i)">+</button>
+        </div>
+
+        <button class="remove" (click)="removeFromCart(i)">Remove</button>
+      </div>
+
+    </div>
+
+    <div class="cart-total" *ngIf="cart.length > 0">
+      <h3>Total: ${{ totalPrice }}</h3>
+      <button class="confirm" (click)="confirmOrder()">
+        Confirm Order
+      </button>
+    </div>
+
+  </div>
+</div> -->
+
+<div class="product-page">
+
+  <!-- LEFT SECTION: Products -->
+  <div class="left-section">
+
+    <!-- Category Filter -->
+    <div class="categories">
+      <button 
+        *ngFor="let cat of categories" 
+        (click)="selectCategory(cat)" 
+        [class.active]="selectedCategory === cat">
+        {{ cat }}
+      </button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <div class="image-container">
+          <img [src]="product.image" alt="{{ product.name }}" />
+        </div>
+
+        <div class="product-info">
+          <h3>{{ product.name }}</h3>
+          <p class="price">{{ product.price }}</p>
+           <h5>{{ product.quantity }}</h5>
+          <button (click)="addToCart(product)" class="add-cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SECTION: Cart -->
+  <div class="cart-panel">
+    <h2>Shopping Cart</h2>
+
+    <div *ngIf="cart.length === 0" class="empty">
+      Your cart is empty
+    </div>
+
+    <div *ngFor="let item of cart; let i = index" class="cart-item">
+      <img [src]="item.image" alt="{{ item.name }}" />
+      <div class="cart-info">
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.price }}</p>
+        <div class="qty">
+          <button (click)="decreaseQty(i)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="increaseQty(i)">+</button>
+        </div>
+        <button class="remove" (click)="removeFromCart(i)">Remove</button>
+      </div>
+    </div>
+
+    <div class="cart-total" *ngIf="cart.length > 0">
+      <h3>Total: {{ totalPrice }}</h3>
+      <button class="confirm" (click)="confirmOrder()">Confirm Order</button>
+    </div>
+  </div>
+
+</div>
+

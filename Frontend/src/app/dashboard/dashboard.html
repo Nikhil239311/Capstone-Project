@@ -1,0 +1,98 @@
+<!-- <div class="dashboard-container">
+
+  <nav class="navbar">
+    <div class="logo">E-Shop</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="/product">Products</a></li>
+      <li><a href="/about">About</a></li>
+      
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    
+    <div class="side-image">
+  <img [src]="sideImage" alt="E-commerce" />
+</div>
+
+
+    <div class="cards-section">
+      <div class="card" *ngFor="let card of cards">
+        <div class="card-image">
+          <img [src]="card.image" alt="Card Image" />
+        </div>
+        <div class="card-content">
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+          <button>Explore</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div> -->
+
+
+<div class="dashboard-container">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">E-Shop</div>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="/product">Products</a></li>
+      <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      <li><a href="/orderhistory">My Order</a></li>
+    </ul>
+
+
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Discover Amazing Products</h1>
+      <p>Upgrade your lifestyle with our premium collections</p>
+      <button class="primary-btn">Shop Now</button>
+    </div>
+
+  <div class="hero-animation">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <div class="glass-card">
+    <h2>Smart Shopping</h2>
+    <p>Fast • Secure • Modern</p>
+  </div>
+</div>
+
+  </section>
+
+  <!-- Cards Section -->
+  <section class="cards-section">
+    <div class="card" *ngFor="let card of cards">
+      <div class="image-wrapper">
+        <img [src]="card.image" alt="Card Image">
+      </div>
+
+      <div class="card-content">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+       <button
+  class="secondary-btn"
+  routerLink="/product">
+  Explore
+</button>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+

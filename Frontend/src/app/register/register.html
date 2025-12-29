@@ -1,0 +1,19 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2 class="title">Create Account</h2>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+      <div class="input-group" *ngFor="let field of fields">
+        <input [type]="field.type" [formControlName]="field.name" required>
+        <label>{{field.label}}</label>
+        <span class="bar"></span>
+      </div>
+
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+
+    <p class="switch">
+      Already have an account? <a href="/login">Sign in</a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+/* --- Order History Section - Dark Dashboard Theme --- */
+.order-history {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #1e1e2f; /* Dark background */
+  color: #ffffff; /* White text for readability */
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+  animation: fadeIn 1.2s ease;
+}
+
+/* --- Table Styles --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: #2c2c3e; /* Slightly lighter dark table background */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+th, td {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff; /* White text */
+}
+
+th {
+  background: #33334d; /* Darker header */
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background: #2a2a3c; /* Slightly lighter dark row */
+}
+
+tr:hover {
+  background: #3a3a55; /* Hover effect */
+  transition: background 0.3s ease;
+}
+
+/* --- Orders Cards Container --- */
+.orders-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+/* --- Individual Order Card --- */
+.order-card {
+  background: #2c2c3e; /* Dark card */
+  border-radius: 20px;
+  padding: 25px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+/* --- Order Row --- */
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #cccccc; /* Soft gray label */
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff; /* White value */
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .orders-container {
+    grid-template-columns: 1fr;
+  }
+
+  table, th, td {
+    font-size: 13px;
+  }
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

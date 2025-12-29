@@ -1,0 +1,190 @@
+/* --- Full Page Dashboard Background --- */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* --- Floating Blobs Animation --- */
+.blob {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.7;
+  animation: floatBlob 8s infinite ease-in-out;
+  z-index: 0;
+}
+
+.blob1 { background: #00eaff; top: 15%; left: 10%; }
+.blob2 { background: #00ffa3; bottom: 10%; right: 15%; animation-delay: 2s; }
+.blob3 { background: #7f5cff; top: 60%; left: 50%; animation-delay: 4s; }
+
+@keyframes floatBlob {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(30px); }
+}
+
+/* --- Glass Login Card --- */
+.login-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  padding: 50px 35px;
+  width: 360px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: popIn 1.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Titles --- */
+.login-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00eaff;
+  margin-bottom: 15px;
+  animation: slideIn 1s ease forwards;
+}
+
+.login-card p {
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* --- Form Styles --- */
+.login-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.form-group input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.form-group input:focus {
+  border-color: #00eaff;
+  box-shadow: 0 0 10px rgba(0,234,255,0.4);
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* --- Submit Button --- */
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #00eaff, #00ffa3);
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,234,255,0.3);
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0,234,255,0.5);
+}
+
+button[type="submit"]:disabled {
+  background: rgba(0,234,255,0.3);
+  cursor: not-allowed;
+}
+
+/* --- Forgot Password & Signup Links --- */
+.forgot-password {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.forgot-password a {
+  color: #00eaff;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+
+.forgot-password a:hover {
+  color: #00ffa3;
+}
+
+.signup-text {
+  margin-top: 18px;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #00eaff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  color: #00ffa3;
+}
+
+/* --- Animations --- */
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .login-card {
+    width: 90%;
+    padding: 35px 25px;
+  }
+
+  .login-card h2 {
+    font-size: 24px;
+  }
+}
